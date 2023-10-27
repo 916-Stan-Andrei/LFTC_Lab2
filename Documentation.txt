@@ -1,0 +1,25 @@
+GitHub link: https://github.com/916-Stan-Andrei/LFTC_Lab2
+
+For my SymbolTable I choose to implement one HashTable that can be used for both identifiers and constants.
+
+MyHashTable<K, V>
+MyHashTable is a generic implementation of a hash table in Java. It allows efficient storage and retrieval of key-value pairs, supporting both integer and string keys. The class includes methods for calculating hash codes, checking key existence, adding keys to the table, and retrieving bucket indexes. It uses the djb2 algorithm for string hashing and is designed to provide good distribution properties for a wide range of data. The hash table is based on an array of lists.
+
+Constructor MyHashTable(int capacity): Initializes the hash table with the specified capacity. It creates an array of lists to represent the hash table with empty buckets.
+int getCapacity(): Implements the interface method. Returns the capacity of the hash table.
+int hash(K key): Implements the interface method to calculate the hash code for the given key, either as an integer or a string, using the djb2 hashing algorithm.
+boolean contains(K key): Implements the interface method to check if the hash table contains the specified key.
+void add(K key): Implements the interface method to add a key to the hash table.
+int getHashValue(K key): Implements the interface method to calculate the hash value for the given key.
+int getBucketIndex(K key): Implements the interface method to return the bucket index for the given key.
+String toString(): Implements the interface method to return a string representation of the hash table.
+
+
+SymbolTable<K>
+SymbolTable is a Java class that serves as a symbol table, which is a data structure for efficiently managing and looking up symbols, such as identifiers or constants. It utilizes the MyHashTable class for storage and retrieval of symbols. The class includes methods for adding symbols, checking their existence, and obtaining their bucket indexes within the underlying hash table.
+
+Constructor SymbolTable(int size): Initializes the symbol table with the specified size and uses a MyHashTable as the underlying data structure for storage.
+void addHash(K name): Adds a name to the symbol table using the underlying hash table.
+boolean hasHash(K name): Checks if the symbol table contains the specified name using the underlying hash table.
+int getPositionHash(K name): Gets the position (bucket index) in the symbol table for the specified name using the underlying hash table.
+String toString(): Returns a string representation of the symbol table, including the underlying hash table.
